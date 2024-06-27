@@ -21,7 +21,6 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - php artisan migrate --force  # Example: Run database migrations after build
 
 artifacts:
   files:
