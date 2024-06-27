@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 8.2
+    commands:
+      - echo Installing PHP 8.2
+      - php -v  # Verify PHP version
+      - composer install --no-interaction --optimize-autoloader
+
+  pre_build:
+    commands:
+      - echo Preparing for build
+
+  build:
+    commands:
+      - echo Building Laravel application
+      - php artisan opti
