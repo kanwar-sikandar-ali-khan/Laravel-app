@@ -13,8 +13,14 @@ phases:
     commands:
       - echo Preparing for build
       - sudo mkdir -p storage/logs  # Ensure the storage/logs directory exists
-      - sudo chmod -R 775 storage/logs  # Adjust permissions
-      - sudo chmod -R 775 bootstrap/cache  # Adjust permissions
+      - sudo mkdir -p bootstrap/cache  # Ensure the bootstrap/cache directory exists
+      - sudo chmod -R 777 storage  # Adjust permissions
+      - sudo chmod -R 777 bootstrap/cache  # Adjust permissions
+      - sudo chown -R $USER:$USER storage  # Change ownership
+      - sudo chown -R $USER:$USER bootstrap/cache  # Change ownership
+      - ls -ld storage  # List directory details for storage
+      - ls -ld storage/logs  # List directory details for storage/logs
+      - ls -ld bootstrap/cache  # List directory details for bootstrap/cache
 
   build:
     commands:
