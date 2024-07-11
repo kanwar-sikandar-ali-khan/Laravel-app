@@ -17,6 +17,7 @@ phases:
     commands:
       - echo Building Laravel application
       - php artisan optimize
+      - mkdir -p storage/logs  # Ensure the storage/logs directory exists
       - chmod -R 775 storage bootstrap/cache  # Adjust permissions
 
   post_build:
