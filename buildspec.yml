@@ -17,6 +17,8 @@ phases:
     commands:
       - echo Building Laravel application
       - php artisan optimize
+      - chmod -R 775 storage bootstrap/cache
+      - chown -R apache:apache storage bootstrap/cache
 
   post_build:
     commands:
