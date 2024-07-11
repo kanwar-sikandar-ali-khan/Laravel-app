@@ -12,9 +12,9 @@ phases:
   pre_build:
     commands:
       - echo Preparing for build
-      - mkdir -p storage/logs  # Ensure the storage/logs directory exists
-      - chmod -R 775 storage/logs  # Adjust permissions
-      - chmod -R 775 bootstrap/cache  # Adjust permissions
+      - sudo mkdir -p storage/logs  # Ensure the storage/logs directory exists
+      - sudo chmod -R 775 storage/logs  # Adjust permissions
+      - sudo chmod -R 775 bootstrap/cache  # Adjust permissions
 
   build:
     commands:
