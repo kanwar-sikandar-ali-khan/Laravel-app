@@ -12,13 +12,14 @@ phases:
   pre_build:
     commands:
       - echo Preparing for build
+      - mkdir -p storage/logs  # Ensure the storage/logs directory exists
+      - chmod -R 775 storage/logs  # Adjust permissions
+      - chmod -R 775 bootstrap/cache  # Adjust permissions
 
   build:
     commands:
       - echo Building Laravel application
       - php artisan optimize
-      - mkdir -p storage/logs  # Ensure the storage/logs directory exists
-      - chmod -R 775 storage bootstrap/cache  # Adjust permissions
 
   post_build:
     commands:
